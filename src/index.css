@@ -1,20 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-  /* Colors - Space & Neon Vibe */
-  --bg-color: #050508;
-  --bg-color-rgb: 5, 5, 8;
-  --surface-color: rgba(20, 20, 30, 0.6);
-  --surface-border: rgba(100, 100, 255, 0.2);
+  /* Colors - Image Inspired Palette */
+  --bg-color: #1A0B2E; /* Deep Dark Space Purple */
+  --bg-color-rgb: 26, 11, 46;
+  --surface-color: rgba(43, 16, 85, 0.6); /* Lighter Dark Purple */
+  --surface-border: rgba(212, 115, 255, 0.3); /* Neon Purple Glow */
   
-  --primary-color: #9d4edd; /* Neon Purple */
-  --primary-glow: rgba(157, 78, 221, 0.6);
+  --primary-color: #D473FF; /* Bright Neon Purple */
+  --primary-glow: rgba(212, 115, 255, 0.6);
   
-  --accent-color: #00f0ff; /* Electric Cyan / Fighter Jet HUD */
-  --accent-glow: rgba(0, 240, 255, 0.6);
+  --accent-color: #38BDF8; /* Planet Edge Cyan/Blue */
+  --accent-glow: rgba(56, 189, 248, 0.6);
+
+  /* Secondary Accents from Palette */
+  --magenta-color: #F43F5E; /* Pink/Red Glowing Pods */
+  --coral-color: #E11D48; /* Deeper Red */
+  --yellow-color: #67E8F9; /* Bright Light Cyan */
   
-  --text-primary: #f0f0f5;
-  --text-secondary: #a0a0b0;
+  --text-primary: #F3E8FF; /* Light Purple Tinted White */
+  --text-secondary: #A78BFA; /* Muted Purple/Grey */
 
   /* Typography */
   --font-main: 'Outfit', sans-serif;
@@ -38,10 +43,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   
-  /* Space / Fighter Jet Grid Background */
+  /* Space Grid Background using Neon Purple */
   background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(212, 115, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 115, 255, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   background-attachment: fixed;
 }

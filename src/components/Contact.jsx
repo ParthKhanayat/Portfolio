@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
-        <h2 className="section-title">Comms</h2>
+        <h2 className="section-title">Contact / Comms</h2>
         <div className="title-line"></div>
       </div>
       
@@ -26,17 +26,17 @@ const Contact = () => {
         
         <form className="contact-form glass-panel hud-border" onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
-            <label htmlFor="name" className="form-label">CALL SIGN / NAME</label>
+            <label htmlFor="name" className="form-label">NAME / CALL SIGN</label>
             <input type="text" id="name" className="form-input" placeholder="Enter your name" />
           </div>
           
           <div className="form-group">
-            <label htmlFor="email" className="form-label">COMMS FREQUENCY / EMAIL</label>
+            <label htmlFor="email" className="form-label">EMAIL / COMMS FREQUENCY</label>
             <input type="email" id="email" className="form-input" placeholder="Enter your email" />
           </div>
           
           <div className="form-group">
-            <label htmlFor="message" className="form-label">TRANSMISSION / MESSAGE</label>
+            <label htmlFor="message" className="form-label">MESSAGE / TRANSMISSION</label>
             <textarea id="message" rows="5" className="form-input" placeholder="Enter your message"></textarea>
           </div>
           

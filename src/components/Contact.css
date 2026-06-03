@@ -75,7 +75,7 @@
 
 .form-input {
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   padding: 1rem;
   border-radius: 4px;
   color: var(--text-primary);
@@ -86,7 +86,7 @@
 .form-input:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
 }
 
 .submit-btn {
@@ -109,7 +109,7 @@
 }
 
 .submit-btn:hover {
-  background: #b16eff;
+  background: var(--magenta-color);
   box-shadow: 0 0 20px var(--primary-glow);
   transform: translateY(-2px);
 }

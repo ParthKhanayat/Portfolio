@@ -31,7 +31,13 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.nav-links li {
+  min-width: 140px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links a {

@@ -32,7 +32,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects-section">
       <div className="section-header">
-        <h2 className="section-title">Fleet / Projects</h2>
+        <h2 className="section-title">Projects / Fleet</h2>
         <div className="title-line"></div>
       </div>
       
