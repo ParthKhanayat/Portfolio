@@ -1,0 +1,152 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.title-line {
+  height: 2px;
+  width: 100px;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.terminal-header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title {
+  margin-left: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.terminal-body {
+  padding: 2rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prompt {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.output {
+  color: #a0a0b0;
+  margin-top: 0.5rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+  content: '>';
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+}
+
+.cursor.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.about-visuals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radar-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle, rgba(0,240,255,0.1) 0%, transparent 70%);
+}
+
+.radar-icon {
+  color: rgba(0, 240, 255, 0.5);
+}
+
+.radar-sweep {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-right: 2px solid var(--accent-color);
+  border-radius: 0 100% 0 0;
+  transform-origin: bottom left;
+  background: linear-gradient(45deg, transparent 50%, rgba(0, 240, 255, 0.2) 100%);
+  animation: sweep 4s linear infinite;
+}
+
+.target {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
