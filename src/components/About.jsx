@@ -20,15 +20,16 @@ const About = () => {
           <div className="terminal-body">
             <p><span className="prompt">$&gt;</span> whoami</p>
             <p className="output">
-              I am a Computer Science student aiming for the stars. While I am targeting tech roles and building scalable software, my mind is constantly exploring the cosmos.
+              I am a Computer Science student aiming for the stars,currently in my third year of college.
+              I am a Data Science Specialist  
             </p>
             <br />
             <p><span className="prompt">$&gt;</span> cat skills.txt</p>
             <ul className="skills-list output">
-              <li>React & Vite (Warp Speed)</li>
-              <li>Node.js (Backend Systems)</li>
-              <li>MongoDB & SQL (Data Cores)</li>
-              <li>Python (AI & Scripting)</li>
+              <li>Web: HTML,CSS,Javascript,React</li>
+              <li>Languages: C, C++, Python, Java, R </li>
+              <li></li>
+              <li></li>
             </ul>
             <span className="cursor blink">_</span>
           </div>

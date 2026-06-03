@@ -12,8 +12,8 @@ const Hero = () => {
         
         <h1 className="hero-title">
           <span className="greeting">Initiating sequence...</span>
-          <span className="name">I'm <span className="highlight-cyan">Parth</span></span>
-          <span className="role">Fullstack <span className="highlight-purple">Developer</span></span>
+          <span className="name">I'm <span className="highlight-cyan">Parth Khanayat</span></span>
+          <span className="role">Data Science<span className="highlight-purple"> Student</span></span>
         </h1>
         
         <p className="hero-subtitle">
