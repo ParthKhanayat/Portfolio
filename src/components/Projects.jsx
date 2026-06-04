@@ -1,22 +1,24 @@
 import { ExternalLink, Code2 } from 'lucide-react';
 import './Projects.css';
-
+import f1image from '../assets/formula1.png';
 const projectsData = [
   {
     id: 1,
-    title: 'Orbit E-Commerce',
-    description: 'A full-stack e-commerce platform with real-time inventory tracking and secure payment gateways.',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    link: '#',
-    github: '#'
+    title: 'F1 Dashboard',
+    description: 'An interactive, web-based Formula 1 dashboard that provides real-time race telemetry, historical session replays, championship standings, and an interactive season schedule. Built with vanilla web technologies, this project visualizes complex F1 data using asynchronous API integration and HTML5 Canvas animations.',
+    tech: ['Vanilla web dev', 'Rest API'],
+    link: 'https://parthkhanayat.github.io/Formula-1-Telemetry-Dashboard/index.html',
+    github: 'https://github.com/ParthKhanayat/Formula-1-Telemetry-Dashboard',
+    image: f1image
   },
   {
     id: 2,
-    title: 'Nebula Dashboard',
-    description: 'Data visualization dashboard for tracking server metrics and user engagement in real-time.',
-    tech: ['Vite', 'TypeScript', 'Chart.js'],
+    title: 'P.R.I.S.M',
+    description: 'Predictive Remote IOT Sensor Matrix',
+    tech: ['ESP32', 'AI', 'ML','React'],
     link: '#',
-    github: '#'
+    github: '#',
+    image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ const projectsData = [
     description: 'End-to-end encrypted messaging application with WebSockets for instant communication.',
     tech: ['Socket.io', 'React', 'Express'],
     link: '#',
-    github: '#'
+    github: '#',
+    image: ''
   }
 ];
 
@@ -38,21 +41,23 @@ const Projects = () => {
       
       <div className="projects-grid">
         {projectsData.map((project) => (
-          <div key={project.id} className="project-card glass-panel hud-border">
-            <div className="card-top">
+          <div key={project.id} className="project-card hud-border" style={{ backgroundImage: `url(${project.image})` }}>
+            <div className="card-overlay">
               <h3 className="project-title">{project.title}</h3>
-              <div className="project-links">
-                <a href={project.github} className="icon-link"><Code2 size={20} /></a>
-                <a href={project.link} className="icon-link"><ExternalLink size={20} /></a>
+              <p className="project-desc">{project.description}</p>
+              
+              <div className="tech-stack">
+                {project.tech.map((tech, index) => (
+                  <span key={index} className="tech-badge">{tech}</span>
+                ))}
               </div>
-            </div>
-            
-            <p className="project-desc">{project.description}</p>
-            
-            <div className="tech-stack">
-              {project.tech.map((tech, index) => (
-                <span key={index} className="tech-badge">{tech}</span>
-              ))}
+
+              <div className="action-row">
+                <a href={project.link} className="explore-btn">
+                  Explore Now <span className="arrow">❯</span>
+                </a>
+                <a href={project.github} className="icon-link"><Code2 size={18} /></a>
+              </div>
             </div>
           </div>
         ))}
