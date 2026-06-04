@@ -129,3 +129,36 @@
     gap: 2rem;
   }
 }
+
+/* Floating animations for contact info and form wrappers */
+.contact-info-wrapper {
+  animation: float-contact-info 7s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-form-wrapper {
+  animation: float-contact-form 9s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@keyframes float-contact-info {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-contact-form {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

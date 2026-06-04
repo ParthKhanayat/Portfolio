@@ -41,22 +41,24 @@ const Projects = () => {
       
       <div className="projects-grid">
         {projectsData.map((project) => (
-          <div key={project.id} className="project-card hud-border" style={{ backgroundImage: `url(${project.image})` }}>
-            <div className="card-overlay">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-desc">{project.description}</p>
-              
-              <div className="tech-stack">
-                {project.tech.map((tech, index) => (
-                  <span key={index} className="tech-badge">{tech}</span>
-                ))}
-              </div>
-
-              <div className="action-row">
-                <a href={project.link} className="explore-btn">
-                  Explore Now <span className="arrow">❯</span>
-                </a>
-                <a href={project.github} className="icon-link"><Code2 size={18} /></a>
+          <div key={project.id} className="project-card-wrapper">
+            <div className="project-card hud-border" style={{ backgroundImage: `url(${project.image})` }}>
+              <div className="card-overlay">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                
+                <div className="tech-stack">
+                  {project.tech.map((tech, index) => (
+                    <span key={index} className="tech-badge">{tech}</span>
+                  ))}
+                </div>
+  
+                <div className="action-row">
+                  <a href={project.link} className="explore-btn">
+                    Explore Now <span className="arrow">❯</span>
+                  </a>
+                  <a href={project.github} className="icon-link"><Code2 size={18} /></a>
+                </div>
               </div>
             </div>
           </div>
