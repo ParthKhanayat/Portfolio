@@ -5,6 +5,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Starfield from './components/Starfield';
+import Loader from './components/Loader';
 import clickSound from './assets/Click.m4a';
 import errorSound from './assets/Error.m4a';
 import spaceMusic from './assets/space_background_music.mp3';
@@ -13,6 +14,7 @@ import './App.css';
 
 function App() {
   const [isMuted, setIsMuted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const bgMusicRef = useRef(null);
 
   // Initialize volume on mount
@@ -69,6 +71,34 @@ function App() {
     return () => document.removeEventListener('click', handleClick);
   }, [isMuted]);
 
+  // Setup Intersection Observer for reveal animations
+  useEffect(() => {
+    if (isLoading) return; // Wait for loading to finish
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: stop observing once revealed
+          // observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [isLoading]);
+
   const toggleMute = (e) => {
     e.stopPropagation(); 
     setIsMuted((prev) => !prev);
@@ -76,6 +106,8 @@ function App() {
 
   return (
     <>
+      {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
+      
       {/* Background Music Element */}
       <audio ref={bgMusicRef} src={spaceMusic} loop muted={isMuted} />
       

@@ -51,10 +51,10 @@ const NavLink = ({ href, normalText, themeText }) => {
 const Navbar = () => {
   return (
     <nav className="navbar glass-panel">
-      <div className="nav-logo">
-        <span className="logo-icon">🚀</span>
-        <span className="logo-text">P.Dev</span>
-      </div>
+      {/* <div className="nav-logo">
+        <span className="logo-icon"></span>
+        <span className="logo-text"></span>
+      </div> */}
       <ul className="nav-links">
         <li><NavLink href="#hero" normalText="Home" themeText="Mission Control" /></li>
         <li><NavLink href="#about" normalText="About" themeText="Pilot Specs" /></li>

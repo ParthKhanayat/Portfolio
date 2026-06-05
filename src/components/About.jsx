@@ -5,13 +5,13 @@ import './About.css';
 const About = () => {
   return (
     <section id="about" className="about-section">
-      <div className="section-header">
+      <div className="section-header reveal">
         <h2 className="section-title">About / Pilot Specs</h2>
         <div className="title-line"></div>
       </div>
       
-      <div className="about-content">
-        <div className="about-card-wrapper">
+      <div className="about-content stagger-container">
+        <div className="about-card-wrapper reveal-left">
           <div className="about-text glass-panel">
             <div className="terminal-header">
               <span className="dot red"></span>
@@ -38,7 +38,7 @@ const About = () => {
           </div>
         </div>
         
-        <div className="about-visuals">
+        <div className="about-visuals reveal-right">
           <div className="radar-container hud-border">
             <div className="profile-image-wrapper">
               <img src={profileImg} alt="Profile" className="profile-image" />

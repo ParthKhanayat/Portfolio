@@ -9,7 +9,6 @@
 .hero-content {
   z-index: 10;
   max-width: 600px;
-  animation: bounce-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .status-badge {
@@ -206,4 +205,86 @@
   .hero-section {
     padding-top: 100px;
   }
+}
+
+/* --- Boot Sequence Animations --- */
+.status-badge,
+.name,
+.role,
+.hero-subtitle,
+.hero-actions,
+.energy-core,
+.scroll-indicator {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.status-badge {
+  animation: boot-pop 0.4s ease-out 2.7s forwards;
+}
+
+.greeting {
+  opacity: 0; /* starts hidden */
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid transparent; /* invisible until typing starts */
+  animation: 
+    boot-typing 1.2s steps(22, end) 3.3s forwards,
+    blink-caret 0.75s step-end 3.3s infinite;
+}
+
+.name {
+  animation: boot-fade-right 0.5s ease-out 4.5s forwards;
+}
+
+.role {
+  animation: boot-fade-right 0.5s ease-out 4.9s forwards;
+}
+
+.hero-subtitle {
+  animation: boot-fade-up 0.5s ease-out 5.3s forwards;
+}
+
+.hero-actions {
+  animation: boot-fade-up 0.5s ease-out 5.7s forwards;
+}
+
+.energy-core {
+  animation: boot-scale-in 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 6.1s forwards;
+}
+
+.scroll-indicator {
+  animation: boot-fade-up 0.5s ease-out 6.7s forwards;
+}
+
+@keyframes boot-typing {
+  0% { width: 0; opacity: 1; }
+  100% { width: 22ch; opacity: 1; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--text-secondary); }
+}
+
+@keyframes boot-pop {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes boot-fade-right {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes boot-fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes boot-scale-in {
+  0% { opacity: 0; transform: translateY(-50%) scale(0.5); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1); }
 }

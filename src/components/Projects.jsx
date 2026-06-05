@@ -19,29 +19,21 @@ const projectsData = [
     link: '#',
     github: '#',
     image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    title: 'Quasar Chat',
-    description: 'End-to-end encrypted messaging application with WebSockets for instant communication.',
-    tech: ['Socket.io', 'React', 'Express'],
-    link: '#',
-    github: '#',
-    image: ''
   }
+  
 ];
 
 const Projects = () => {
   return (
     <section id="projects" className="projects-section">
-      <div className="section-header">
+      <div className="section-header reveal">
         <h2 className="section-title">Projects / Fleet</h2>
         <div className="title-line"></div>
       </div>
       
-      <div className="projects-grid">
-        {projectsData.map((project) => (
-          <div key={project.id} className="project-card-wrapper">
+      <div className="projects-grid stagger-container">
+        {projectsData.map((project, index) => (
+          <div key={project.id} className="project-card-wrapper reveal-scale" style={{ '--stagger-idx': index }}>
             <div className="project-card hud-border" style={{ backgroundImage: `url(${project.image})` }}>
               <div className="card-overlay">
                 <h3 className="project-title">{project.title}</h3>
