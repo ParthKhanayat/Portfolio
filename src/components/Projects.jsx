@@ -1,6 +1,8 @@
 import { ExternalLink, Code2 } from 'lucide-react';
 import './Projects.css';
 import f1image from '../assets/formula1.png';
+import prismImg from '../assets/prism landing page ss.png';
+
 const projectsData = [
   {
     id: 1,
@@ -16,11 +18,10 @@ const projectsData = [
     title: 'P.R.I.S.M',
     description: 'Predictive Remote IOT Sensor Matrix',
     tech: ['ESP32', 'AI', 'ML','React'],
-    link: '#',
+    link: 'https://prism-iot-dashboard.vercel.app/',
     github: '#',
-    image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop'
+    image: prismImg
   }
-  
 ];
 
 const Projects = () => {
