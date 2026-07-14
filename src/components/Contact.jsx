@@ -1,14 +1,48 @@
+import { useState } from 'react';
 import { Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formData = new FormData(event.target);
+
+    // You need to replace YOUR_ACCESS_KEY_HERE with your Web3Forms access key.
+    // Get it by entering parthk396@gmail.com at https://web3forms.com/
+    formData.append("access_key", "5f6280d8-f1a7-4775-aa4a-de3d35c15138");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Transmission Successful!");
+        event.target.reset();
+        setTimeout(() => setResult(""), 5000);
+      } else {
+        console.log("Error", data);
+        setResult("Transmission Failed: " + data.message);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setResult("Transmission Failed. Please try again.");
+    }
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="section-header reveal">
         <h2 className="section-title">Comm Link / Contact</h2>
         <div className="title-line"></div>
       </div>
-      
+
       <div className="contact-container stagger-container">
         <div className="contact-info-wrapper reveal-left">
           <div className="contact-info glass-panel">
@@ -16,7 +50,7 @@ const Contact = () => {
             <p className="info-desc">
               Looking for a pilot for your next big mission? Transmit a message below and I'll get back to you at light speed.
             </p>
-            
+
             <div className="social-links">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
@@ -34,32 +68,37 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="contact-form-wrapper reveal-right">
-          <form className="contact-form glass-panel" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form glass-panel" onSubmit={onSubmit}>
             <div className="form-group">
               <label htmlFor="name" className="form-label">NAME / CALL SIGN</label>
-              <input type="text" id="name" className="form-input" placeholder="Enter your name" />
+              <input type="text" name="name" id="name" className="form-input" placeholder="Enter your name" required />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="email" className="form-label">EMAIL / COMMS FREQUENCY</label>
-              <input type="email" id="email" className="form-input" placeholder="Enter your email" />
+              <input type="email" name="email" id="email" className="form-input" placeholder="Enter your email" required />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="message" className="form-label">MESSAGE / TRANSMISSION</label>
-              <textarea id="message" rows="5" className="form-input" placeholder="Enter your message"></textarea>
+              <textarea name="message" id="message" rows="5" className="form-input" placeholder="Enter your message" required></textarea>
             </div>
-            
-            <button type="submit" className="submit-btn">
+
+            <button type="submit" className="submit-btn" disabled={result === "Sending..."}>
               <Send size={18} />
-              Transmit
+              {result === "Sending..." ? "Transmitting..." : "Transmit"}
             </button>
+            {result && (
+              <div className={`form-result ${result.includes('Failed') ? 'error' : 'success'}`} style={{ marginTop: '1rem', textAlign: 'center', fontSize: '0.9rem', color: result.includes('Failed') ? '#ff4d4d' : '#4dff4d' }}>
+                {result}
+              </div>
+            )}
           </form>
         </div>
       </div>
-      
+
       <footer className="footer">
         <p>Built with <span className="highlight-cyan">React</span> & <span className="highlight-purple">Vite</span>. Design initialized in <span className="highlight-cyan">2026</span>.</p>
       </footer>

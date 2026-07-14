@@ -28,10 +28,11 @@ const About = () => {
               <br />
               <p><span className="prompt">$&gt;</span> cat skills.txt</p>
               <ul className="skills-list output">
-                <li>Web: HTML,CSS,Javascript,React</li>
-                <li>Languages: C, C++, Python, Java, R </li>
-                <li></li>
-                <li></li>
+                <li><strong>Languages:</strong> C++, C, Python, SQL, Java, R, JavaScript, HTML/CSS, LookML</li>
+                <li><strong>Data Architecture & Cloud:</strong> BigQuery, Dataflow, Dataproc, Data Warehousing, Data Lakes, ETL Pipelines</li>
+                <li><strong>BI & Analytics:</strong> Looker Enterprise, Looker Studio, Data Visualization, Telemetry Analysis</li>
+                <li><strong>Systems & Local AI:</strong> Linux, Arduino, ESP32, Local LLM Deployment (Ollama)</li>
+                <li><strong>Tools & Core Competencies:</strong> Git, React.js, Data Structures & Algorithms, Object-Oriented Programming</li>
               </ul>
               <span className="cursor blink">_</span>
             </div>

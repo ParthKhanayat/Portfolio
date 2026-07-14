@@ -21,10 +21,16 @@ const Hero = () => {
         </p>
         
         <div className="hero-actions">
-          <button className="primary-btn hud-border">
+          <a 
+            href="https://docs.google.com/document/d/1RpNskK7s3pQdXzptTFvVFzLHWXpscRy1EJGLlaxY6Ns/edit?usp=sharing" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="primary-btn hud-border"
+            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+          >
             <Rocket className="btn-icon" size={20} />
-            Engage Thrusters
-          </button>
+            View Resume
+          </a>
           <a href="#about" className="secondary-link">View Flight Logs</a>
         </div>
       </div>

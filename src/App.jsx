@@ -59,9 +59,7 @@ function App() {
 
       if (target.classList.contains('mute-btn')) return;
 
-      const isThrusters = target.textContent && target.textContent.toLowerCase().includes('engage thrusters');
-      
-      const audioSrc = isThrusters ? errorSound : clickSound;
+      const audioSrc = clickSound;
       const audio = new Audio(audioSrc);
       audio.volume = 1.0; // Ensure click sounds are 100% volume
       audio.play().catch(console.warn);
